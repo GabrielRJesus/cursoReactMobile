@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, StyleSheet} from 'react-native'
 import Simples from './components/Simples'
+import Parimpar from './components/Parimpar'
 
 export default class App extends Component{
   render(){
     return(
       <View style={style.container}>
         <Simples texto="Flexivel!!"/>
+        <Parimpar numero={5} />
       </View>
     )
   }
