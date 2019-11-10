@@ -1,5 +1,6 @@
 import React from 'react'
 import {Text} from 'react-native'
+import Padrao from '../estilos/Padrao'
 
 //function comum
 // export default function(props){
@@ -8,4 +9,4 @@ import {Text} from 'react-native'
 
 //arrow function
 export default props =>
-    <Text>{props.texto}</Text>
+    <Text style={[Padrao.ex]}>{props.texto}</Text>
