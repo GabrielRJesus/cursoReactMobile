@@ -5,8 +5,16 @@ import Simples from './components/Simples'
 import Parimpar from './components/Parimpar'
 import {Inverter, MegaSena} from './components/Multi'
 import Contador from './components/Contador'
+import Evento from './components/Evento'
+import { Avo } from './components/ComunicacaoDireta'
 
 export default createDrawerNavigator({
+    Avo: {
+        screen: () => <Avo nome='João' sobrenome='Silva' />
+    },
+    Evento:{
+        screen: Evento 
+    },
     Contador:{
         screen: () => <Contador />
     },
