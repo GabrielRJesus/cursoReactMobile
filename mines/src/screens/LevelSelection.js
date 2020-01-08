@@ -26,7 +26,7 @@ export default props => {
                                 <Text style={styles.buttonLabel}>Intermediário</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                            style={[styles.button, styles.bgDificil]}
+                            style={[styles.button, styles.bgHard]}
                             onPress={() => props.onLevelSelected(0.3) }>
                                 <Text style={styles.buttonLabel}>Dificil</Text>
                         </TouchableOpacity>
