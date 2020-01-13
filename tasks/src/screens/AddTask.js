@@ -6,6 +6,8 @@ import {
     Text, 
     TextInput,
     DatePickerIOS,
+    DatePickerAndroid,
+    Platform,
     TouchableWithoutFeedback,
     TouchableOpacity,
     Alert,
@@ -27,6 +29,20 @@ export default class AddTask extends Component {
         const data = { ...this.state }
         this.props.onSave(data)
         this.setState({ ...initialState })
+    }
+
+    handleDateAndroidChanged = () => {
+        DatePickerAndroid.open({
+            date: this.state.date
+        }).then(e => {
+            if(e.action !== DatePickerAndroid.dismissedAction){
+                const momentDate = moment(this.state.date)
+                momentDate.date(e.day)
+                momentDate.month(e.month)
+                momentDate.year(e.year)
+                this.setState({ date: momentDate.toDate() })
+            }
+        })
     }
 
     render(){
@@ -108,5 +124,12 @@ var styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#E3E3E3',
         borderRadius: 6,
+    },
+    date: {
+        fontFamily: commonStyles.fontFamily,
+        fontSize: 20,
+        marginLeft: 10,
+        marginTop: 10,
+        textAlign: 'center',
     }
 })
